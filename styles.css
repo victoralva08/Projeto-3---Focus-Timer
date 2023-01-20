@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    font-size: 62.5%;
+
+    /* variáveis */
+    --bg-color: rgba(18, 18, 20, 1);
+    --bg-buttons: rgba(66, 211, 255, 0.13);
+
+    --ff-color: white;
+}
+
+.hide{
+    display: none;
+}
+
+body{
+    background: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+
+    display: grid; /* a aplicação do display: grid no body criará uma linha de demarcação imaginariá horizontal Ele permite o uso dos comandos -self para posicionar
+    demais elementos que estejam contidos dentro do <body>!*/
+    min-height: 100vh;
+}
+
+main{
+    align-self: end; /* o align-self irá alinhar o conteúdo da <main> VERTICALMENTE. Ou seja, pode ser posicionado no start, center ou end em relação ao grid! */
+    justify-self: center; /* o justify-self irá realizar o posicionamento HORIZONTAL! */
+}
+
+.timer{
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+    color: var(--ff-color);
+
+    line-height: 103px;
+    text-align: center;
+    text-transform: uppercase;
+
+    display: flex;
+
+    margin-bottom: 1.6rem;
+}
+
+.controls{
+    background: var(--bg-buttons);
+    border-radius: 999.9rem;
+
+    width: clamp(10rem, 10rem + 30vw, 22.8rem); /* a função clamp estipula o valor MÍNIMO de largura, o valor IDEAL e o valor MÁXIMO, permitindo que a largura
+se modifique de acordo com a largura da página! */
+    height: clamp(8rem, 5rem + 10vw, 10.8rem); /* neste caso, a altura mudará de acordo com a largura (vw) */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+ /* também é possível aplicar a função clamp no .svg! */
+
+button{
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    transition: transform .3s;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+footer{
+    align-self: flex-end;
+    justify-self: end; /* este método é alternativo ao position absolute da página! */
+
+    padding: 0 4rem 3.2rem 0;
+}
